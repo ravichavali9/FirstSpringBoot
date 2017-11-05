@@ -12,6 +12,9 @@ public class Person {
 	
 	private LocalDate personDOB;
 	
+	public Person(){
+	}
+	
 	public Person(String personName, long personId, String personAddress){
 		this.personName = personName;
 		this.personId = personId;
