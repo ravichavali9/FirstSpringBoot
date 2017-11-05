@@ -32,7 +32,7 @@ public class PersonService {
 		if(PersonManagementApplication.personRecord.containsKey(new Long(fellow.getPersonId()))){
 			PersonManagementApplication.personRecord.put(new Long(fellow.getPersonId()), fellow);
 		} else {
-			throw new Exception("Person "+fellow.getPersonId()+"doesn't exist");
+			throw new Exception("Person "+fellow.getPersonId()+" doesn't exist");
 		}
 		return fellow;
 	}
