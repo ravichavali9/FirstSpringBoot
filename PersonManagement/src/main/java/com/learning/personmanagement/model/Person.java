@@ -4,53 +4,53 @@ import java.time.LocalDate;
 
 public class Person {
 	
-	private String personName;
+	private String name;
 	
-	private long personId;
+	private long id;
 	
-	private String personAddress;
+	private String address;
 	
-	private LocalDate personDOB;
+	private LocalDate DOB;
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public LocalDate getDOB() {
+		return DOB;
+	}
+
+	public void setDOB(LocalDate dOB) {
+		DOB = dOB;
+	}
 	
 	public Person(){
 	}
 	
-	public Person(String personName, long personId, String personAddress){
-		this.personName = personName;
-		this.personId = personId;
-		this.personAddress = personAddress;
-	}
-	
-	public String getPersonName() {
-		return personName;
-	}
-
-	public void setPersonName(String personName) {
-		this.personName = personName;
-	}
-
-	public long getPersonId() {
-		return personId;
-	}
-
-	public void setPersonId(long personId) {
-		this.personId = personId;
-	}
-
-	public String getPersonAddress() {
-		return personAddress;
-	}
-
-	public void setPersonAddress(String personAddress) {
-		this.personAddress = personAddress;
-	}
-
-	/*public LocalDate getPersonDOB() {
-		return personDOB;
-	}*/
-
-	public void setPersonDOB(LocalDate personDOB) {
-		this.personDOB = personDOB;
+	public Person(String name, long id, String address){
+		this.name = name;
+		this.id = id;
+		this.address = address;
 	}	
 	
 }
