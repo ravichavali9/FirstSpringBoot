@@ -20,9 +20,9 @@ public class PersonManagementApplication {
 		
 		personRecord = new HashMap<Long,Person>();
 		
-		personRecord.put(fellowOne.getPersonId(),fellowOne);
-		personRecord.put(fellowTwo.getPersonId(),fellowTwo);
-		personRecord.put(fellowThree.getPersonId(),fellowThree);
+		personRecord.put(fellowOne.getId(),fellowOne);
+		personRecord.put(fellowTwo.getId(),fellowTwo);
+		personRecord.put(fellowThree.getId(),fellowThree);
 		
 		SpringApplication.run(PersonManagementApplication.class, args);
 	}
