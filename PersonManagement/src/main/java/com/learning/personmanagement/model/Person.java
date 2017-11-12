@@ -2,10 +2,18 @@ package com.learning.personmanagement.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Person {
 	
 	private String name;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
 	private String address;
@@ -52,5 +60,4 @@ public class Person {
 		this.id = id;
 		this.address = address;
 	}	
-	
 }
