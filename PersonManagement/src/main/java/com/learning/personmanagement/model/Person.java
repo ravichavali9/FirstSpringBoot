@@ -2,10 +2,16 @@ package com.learning.personmanagement.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Person {
@@ -16,9 +22,12 @@ public class Person {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private String address;
+	@OneToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
+	private Address address;
 	
-	private LocalDate DOB;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private LocalDate dateOfBirth;
 	
 	public String getName() {
 		return name;
@@ -36,26 +45,26 @@ public class Person {
 		this.id = id;
 	}
 
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 
-	public LocalDate getDOB() {
-		return DOB;
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setDOB(LocalDate dOB) {
-		DOB = dOB;
+	public void setDateOfBirth(LocalDate dOB) {
+		dateOfBirth = dOB;
 	}
 	
 	public Person(){
 	}
 	
-	public Person(String name, long id, String address){
+	public Person(String name, long id, Address address){
 		this.name = name;
 		this.id = id;
 		this.address = address;

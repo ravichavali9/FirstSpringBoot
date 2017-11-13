@@ -33,11 +33,11 @@ public class PersonController {
 
 	@RequestMapping(value="/update",method = RequestMethod.PUT)
 	public Person updatePerson(@RequestBody Person person) throws Throwable {
-		if(PersonManagementApplication.personRecord.containsKey(new Long(person.getId()))){
+		/*if(PersonManagementApplication.personRecord.containsKey(new Long(person.getId()))){
 			PersonManagementApplication.personRecord.put(new Long(person.getId()), person);
 		} else {
 			throw new Exception("Person "+person.getId()+" doesn't exist");
-		}
+		}*/
 		return person;
 	}
 }
