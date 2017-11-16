@@ -22,8 +22,8 @@ public class Person {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@OneToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id")
+	@OneToOne(fetch = FetchType.EAGER, optional = true, cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id")
 	private Address address;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
@@ -68,5 +68,12 @@ public class Person {
 		this.name = name;
 		this.id = id;
 		this.address = address;
+	}
+
+	public void copy(Person otherPerson) {
+		this.name = otherPerson.getName();
+		this.id = otherPerson.getId();
+		this.address = otherPerson.getAddress();
+		this.dateOfBirth = otherPerson.getDateOfBirth();
 	}	
 }
